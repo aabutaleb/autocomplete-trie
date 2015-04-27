@@ -95,7 +95,7 @@ public class Trie {
                 Node child = node.search(c);
                 if (child == null || child.isEmpty()) {
                     break;
-                } else if (i != cArray.length-1){ //Last element
+                } else if (!((i == cArray.length-1) && child.isEdge())){ //Last element contains a word itself
                     node = child;
                 }
             }
