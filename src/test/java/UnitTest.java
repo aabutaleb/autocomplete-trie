@@ -38,6 +38,22 @@ public class UnitTest {
     }
 
     @Test
+    public void spaceInContainedElementSearch(){
+        Trie trie = new Trie();
+        List<String> expected = Arrays.asList(new String[]{"To me"});
+
+        trie.insert("To");
+        trie.insert("To me");
+
+        List<String> results = trie.search("to ");
+
+        Assert.assertNotNull(results);
+        Assert.assertFalse(results.isEmpty());
+        Assert.assertEquals(results.size(), 1);
+        Assert.assertEquals(results, expected);
+    }
+
+    @Test
     public void containedElementSearch(){
         Trie trie = new Trie();
         List<String> expected = Arrays.asList(new String[]{"Home", "HomeWork", "HomeWork repeated"});

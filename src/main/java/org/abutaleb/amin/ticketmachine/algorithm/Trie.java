@@ -95,7 +95,7 @@ public class Trie {
                 Node child = node.search(c);
                 if (child == null || child.isEmpty()) {
                     break;
-                } else if (i != cArray.length-2){ //Last element
+                } else if (i != cArray.length-1){ //Last element
                     node = child;
                 }
             }
