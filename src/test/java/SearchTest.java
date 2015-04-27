@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.io.*;
+import java.util.List;
 
 /**
  * Created by taleba on 27/04/2015.
@@ -25,8 +26,14 @@ public class SearchTest {
         }
     }
 
-    @Test
-    public void dummyTest(){
-        Assert.assertTrue(true);
+    @Test(description = "Searches for one of the words")
+    public void searchComplete(){
+        String sample = "Amin";
+
+        List<String> words = trie.search(sample);
+
+        Assert.assertFalse(words.isEmpty());
+        Assert.assertEquals(words.size(), 1);
+        Assert.assertEquals(words.get(0), sample);
     }
 }

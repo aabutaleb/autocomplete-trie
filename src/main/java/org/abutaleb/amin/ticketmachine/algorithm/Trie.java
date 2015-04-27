@@ -89,9 +89,12 @@ public class Trie {
         char[] cArray = s.toLowerCase().toCharArray();
 
         for (char c: cArray){
-            node = node.search(c);
-            if (node == null){
+            Node child = node.search(c);
+            if (child == null || child.isEmpty()){
                 break;
+            }
+            else{
+                node = child;
             }
         }
         
