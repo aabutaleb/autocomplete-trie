@@ -21,7 +21,7 @@ public class SearchTest {
     public void populateData() throws IOException {
         trie = new Trie();
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("data").getFile());
+        File file = new File(classLoader.getResource("testdata").getFile());
         BufferedReader br = new BufferedReader(new FileReader(file));
 
         String sCurrentLine;
