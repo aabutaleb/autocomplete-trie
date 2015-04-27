@@ -86,19 +86,22 @@ public class Trie {
     public List<String> search(String s){
         List<String> results = new ArrayList<String>();
         Node node = root;
-        char[] cArray = s.toLowerCase().toCharArray();
 
-        for (char c: cArray){
-            Node child = node.search(c);
-            if (child == null || child.isEmpty()){
-                break;
+        if (s != null && !s.isEmpty()) {
+            char[] cArray = s.toLowerCase().toCharArray();
+
+            for (int i = 0; i < cArray.length; i++) {
+                char c = cArray[i];
+                Node child = node.search(c);
+                if (child == null || child.isEmpty()) {
+                    break;
+                } else if (i != cArray.length-2){ //Last element
+                    node = child;
+                }
             }
-            else{
-                node = child;
-            }
+
+            results = findWords(node);
         }
-        
-        results = findWords(node);
 
         return results;
     }
