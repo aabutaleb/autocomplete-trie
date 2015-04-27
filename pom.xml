@@ -12,6 +12,14 @@
         <testng.version>6.8.21</testng.version>
     </properties>
 
+    <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
