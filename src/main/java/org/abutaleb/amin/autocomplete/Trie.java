@@ -1,4 +1,4 @@
-package org.abutaleb.amin.ticketmachine.algorithm;
+package org.abutaleb.amin.autocomplete;
 
 import java.util.TreeMap;
 import java.util.List;

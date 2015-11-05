@@ -1,4 +1,4 @@
-import org.abutaleb.amin.ticketmachine.algorithm.Trie;
+import org.abutaleb.amin.autocomplete.Trie;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
